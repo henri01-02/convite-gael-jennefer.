@@ -1,0 +1,303 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aniversário de Gael e Jennefer</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px 12px;
+      font-family: Arial, sans-serif;
+      color: #222;
+      background: #f5e8f5;
+    }
+
+    .convite {
+      max-width: 480px;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 22px;
+      background: white;
+      box-shadow: 0 8px 25px #0002;
+    }
+
+    .cabecalho {
+      display: flex;
+      min-height: 230px;
+      text-align: center;
+      color: white;
+    }
+
+    .minnie, .mickey {
+      width: 50%;
+      padding: 28px 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .minnie {
+      background: linear-gradient(160deg, #ed85b7, #a92c69);
+    }
+
+    .mickey {
+      background: linear-gradient(160deg, #e52c40, #741322);
+    }
+
+    .personagem {
+      font-size: 54px;
+      margin-bottom: 10px;
+    }
+
+    .minnie h2, .mickey h2 {
+      font-size: 17px;
+      margin: 4px 0;
+    }
+
+    .cabecalho p {
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .conteudo {
+      padding: 24px 18px;
+      text-align: center;
+    }
+
+    .etiqueta {
+      color: #a52b66;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    h1 {
+      font-size: 29px;
+      margin: 12px 0;
+    }
+
+    .data {
+      font-weight: bold;
+      color: #a52b66;
+      font-size: 18px;
+    }
+
+    .texto {
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .presentes {
+      text-align: left;
+      margin-top: 25px;
+    }
+
+    .presentes h2 {
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 18px;
+    }
+
+    .lista {
+      padding: 16px;
+      margin-bottom: 14px;
+      border-radius: 14px;
+      background: #fff1f7;
+      border-left: 5px solid #df77a9;
+    }
+
+    .lista.gael {
+      background: #fff0f0;
+      border-left-color: #df3949;
+    }
+
+    .lista h3 {
+      margin: 0 0 10px;
+    }
+
+    .lista p {
+      font-size: 14px;
+      line-height: 1.7;
+      margin: 4px 0;
+    }
+
+    .confirmacao {
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      font-size: 14px;
+      margin: 15px 0 7px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 16px;
+      background: white;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      margin-top: 22px;
+      border: none;
+      border-radius: 12px;
+      background: #25d366;
+      color: #073d20;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .rodape {
+      padding: 15px;
+      text-align: center;
+      background: #faf4f8;
+      font-size: 12px;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="convite">
+
+    <header class="cabecalho">
+      <section class="minnie">
+        <div class="personagem">🎀</div>
+        <h2>Jennefer</h2>
+        <p>Um toque de encanto e magia!</p>
+      </section>
+
+      <section class="mickey">
+        <div class="personagem">🐭</div>
+        <h2>Gael</h2>
+        <p>A diversão está chegando!</p>
+      </section>
+    </header>
+
+    <section class="conteudo">
+      <div class="etiqueta">VOCÊ É NOSSO CONVIDADO</div>
+
+      <h1>Gael & Jennefer</h1>
+
+      <div class="data">31 de janeiro de 2027</div>
+
+      <p class="texto">
+        Estamos preparando um dia muito especial!
+        Sua presença vai deixar essa comemoração ainda mais feliz. ❤️
+      </p>
+
+      <section class="presentes">
+        <h2>🎁 Sugestões de presente</h2>
+
+        <div class="lista">
+          <h3>🎀 Jennefer</h3>
+          <p><strong>Roupa:</strong> tamanho 10</p>
+          <p><strong>Calçado:</strong> 33/34</p>
+          <p>
+            <strong>Mimos e acessórios:</strong>
+            bolsas, perfumes e outros itens especiais.
+          </p>
+        </div>
+
+        <div class="lista gael">
+          <h3>❤️ Gael</h3>
+          <p><strong>Roupa:</strong> tamanho 3</p>
+          <p><strong>Calçado:</strong> 22/23</p>
+          <p><strong>Outras opções:</strong> brinquedos.</p>
+        </div>
+      </section>
+
+      <section class="confirmacao">
+        <h2>Confirme sua presença</h2>
+
+        <form id="formulario">
+          <label for="nome">Nome completo</label>
+          <input id="nome" required
+                 placeholder="Digite seu nome">
+
+          <label for="presenca">Você vai comparecer?</label>
+          <select id="presenca" required>
+            <option value="">Selecione</option>
+            <option value="Sim, vou comparecer">
+              Sim, vou comparecer!
+            </option>
+            <option value="Não poderei comparecer">
+              Não poderei comparecer
+            </option>
+          </select>
+
+          <label for="acompanhantes">
+            Quantos acompanhantes irão com você?
+          </label>
+          <select id="acompanhantes">
+            <option value="0">Nenhum</option>
+            <option value="1">1 acompanhante</option>
+            <option value="2">2 acompanhantes</option>
+            <option value="3">3 acompanhantes</option>
+            <option value="4">4 acompanhantes</option>
+            <option value="5">5 ou mais</option>
+          </select>
+
+          <button type="submit">
+            Confirmar pelo WhatsApp
+          </button>
+        </form>
+      </section>
+    </section>
+
+    <footer class="rodape">
+      Gael & Jennefer • 31.01.2027
+    </footer>
+  </main>
+
+  <script>
+    // Número informado, com código do Brasil e DDD.
+    const whatsapp = "558287340994";
+
+    document.getElementById("formulario")
+      .addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const nome =
+          document.getElementById("nome").value.trim();
+
+        const presenca =
+          document.getElementById("presenca").value;
+
+        const acompanhantes =
+          document.getElementById("acompanhantes").value;
+
+        const mensagem =
+          "🎉 CONFIRMAÇÃO DE ANIVERSÁRIO\n\n" +
+          "Aniversariantes: Gael e Jennefer\n" +
+          "Data: 31/01/2027\n\n" +
+          "Nome: " + nome + "\n" +
+          "Presença: " + presenca + "\n" +
+          "Acompanhantes: " + acompanhantes;
+
+        const url =
+          "https://wa.me/" + whatsapp +
+          "?text=" + encodeURIComponent(mensagem);
+
+        window.location.href = url;
+      });
+  </script>
+</body>
+  </html>
+  
