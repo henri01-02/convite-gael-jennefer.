@@ -1,88 +1,385 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aniversário de Gael e Jennefer</title>
-<style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;color:#34252d;background:#fce8f0 url('7a66332aa333f73855a90d51f4063844.jpg') center/cover fixed no-repeat;min-height:100vh;padding:20px 12px}
-body:before{content:"";position:fixed;inset:0;background:rgba(255,245,249,.38);z-index:-1}
-.convite{max-width:540px;margin:0 auto;background:transparent;border-radius:24px;overflow:hidden;box-shadow:0 8px 30px #0003}
-.topo{display:grid;grid-template-columns:1fr 1fr;text-align:center;color:white}
-.minnie{background:#e85b94;padding:24px 8px}
-.mickey{background:#d92f38;padding:24px 8px}
-.emoji{font-size:44px}
-.topo h2{font-size:25px;margin:8px 0 0}
-.conteudo{text-align:center;padding:24px 20px}
-h1{font-size:34px;color:#c62e61;margin:0 0 10px}
-.intro{font-size:17px;line-height:1.5}
-.detalhes{margin:22px 0;display:grid;gap:12px;text-align:left}
-.item{background:#fff0f5;border-radius:14px;padding:14px}
-.item strong{display:block;color:#b62859;margin-bottom:5px}
-h3{color:#b62859;margin:22px 0 10px}
-.presentes{background:#fff4f7;border-radius:15px;padding:15px;text-align:left;line-height:1.7}
-.aviso{font-size:14px;color:#684d59}
-label{display:block;text-align:left;font-weight:bold;margin:13px 0 6px}
-input,select{width:100%;padding:13px;border:1px solid #d9bdc8;border-radius:10px;font-size:16px;background:white}
-button{width:100%;padding:15px;margin-top:18px;background:#25a85a;color:white;border:0;border-radius:12px;font-size:17px;font-weight:bold}
-.rodape{padding:0 20px 24px;text-align:center;color:#745b66;font-size:13px}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convite de Gael e Jennefer</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #492b38;
+      background: #fce8f0;
+    }
+
+    /* CAPA INICIAL */
+    #capa-inicial {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+      color: white;
+      background:
+        linear-gradient(
+          rgba(50, 15, 35, 0.25),
+          rgba(50, 15, 35, 0.65)
+        ),
+        url('7a66332aa333f73855a90d51f4063844.jpg')
+        center / cover no-repeat;
+    }
+
+    #capa-inicial h1 {
+      font-size: clamp(32px, 9vw, 48px);
+      margin: 0 0 15px;
+      text-shadow: 0 2px 8px #0008;
+    }
+
+    #capa-inicial p {
+      font-size: 19px;
+      line-height: 1.5;
+      text-shadow: 0 2px 8px #0008;
+    }
+
+    #botao-abrir {
+      margin-top: 22px;
+      padding: 15px 28px;
+      border: none;
+      border-radius: 30px;
+      background: #e9437b;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 12px #0003;
+    }
+
+    #botao-abrir:active {
+      transform: scale(0.97);
+    }
+
+    /* CONVITE COMPLETO */
+    #conteudo-convite {
+      min-height: 100vh;
+      padding: 20px 12px 40px;
+      background:
+        linear-gradient(#fff5f0e8, #fce8f0ee),
+        url('7a66332aa333f73855a90d51f4063844.jpg')
+        center / cover fixed;
+    }
+
+    .oculto {
+      display: none !important;
+    }
+
+    .convite {
+      width: 100%;
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 24px 18px;
+      background: #fffafc;
+      border: 3px solid #f1b7ce;
+      border-radius: 22px;
+      box-shadow: 0 6px 22px #6c30401c;
+      text-align: center;
+    }
+
+    .topo {
+      padding: 20px 10px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #f7c9dc, #fce7ed);
+    }
+
+    .enfeite {
+      font-size: 34px;
+    }
+
+    h2 {
+      color: #c42d68;
+      font-size: 31px;
+      margin: 12px 0;
+    }
+
+    .subtitulo {
+      font-size: 17px;
+      line-height: 1.5;
+    }
+
+    .separador {
+      height: 2px;
+      margin: 22px 0;
+      background: #f3c2d4;
+      border: none;
+    }
+
+    .detalhes {
+      margin: 18px 0;
+      padding: 16px 10px;
+      background: #fff0f5;
+      border-radius: 14px;
+    }
+
+    .data {
+      margin: 12px 0;
+      font-size: 17px;
+      line-height: 1.5;
+    }
+
+    h3 {
+      color: #bd3166;
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .presentes {
+      text-align: left;
+      padding: 15px;
+      background: #fff2f6;
+      border-radius: 14px;
+      line-height: 1.7;
+    }
+
+    .presentes strong {
+      color: #b32e60;
+    }
+
+    .confirmacao {
+      margin-top: 22px;
+      padding: 18px 14px;
+      background: #fff0f5;
+      border-radius: 16px;
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      margin: 14px 0 6px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #dfafc1;
+      border-radius: 9px;
+      background: white;
+      font-size: 16px;
+    }
+
+    .botao-whatsapp {
+      display: block;
+      width: 100%;
+      margin-top: 20px;
+      padding: 15px;
+      border: none;
+      border-radius: 12px;
+      background: #25a75a;
+      color: white;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .rodape {
+      margin-top: 22px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+  </style>
 </head>
+
 <body>
-<main class="convite">
-<header class="topo">
-<div class="minnie"><div class="emoji">🎀</div><h2>Jennefer</h2></div>
-<div class="mickey"><div class="emoji">🐭</div><h2>Gael</h2></div>
-</header>
-<section class="conteudo">
-<h1>Vamos comemorar!</h1>
-<p class="intro">Você é nosso convidado especial para celebrar esse dia tão feliz com a gente! ❤️</p>
-<div class="detalhes">
-<div class="item"><strong>📅 DATA</strong>31 de janeiro de 2027</div>
-<div class="item"><strong>🕓 HORÁRIO</strong>16h</div>
-<div class="item"><strong>📍 LOCAL</strong>Espaço Vale do Sol</div>
-</div>
-<h3>🎁 Sugestões de presentes</h3>
-<div class="presentes">
-<strong>🎀 Para Jennefer</strong><br>
-• Roupas: tamanho 10<br>
-• Calçados: tamanho 33/34<br>
-• Mimos e acessórios: bolsas, perfumes e outros itens especiais.
-<hr>
-<strong>🐭 Para Gael</strong><br>
-• Roupas: tamanho 3<br>
-• Calçados: tamanho 22/23<br>
-• Brinquedos
-</div>
-<h3>💌 Confirme sua presença</h3>
-<p class="aviso">Preencha os dados abaixo. Sua confirmação será preparada no WhatsApp.</p>
-<form id="confirmacao">
-<label for="nome">Nome completo</label>
-<input id="nome" name="nome" autocomplete="name" required placeholder="Digite seu nome completo">
-<label for="presenca">Você vai à festa?</label>
-<select id="presenca" name="presenca" required>
-<option value="">Selecione uma opção</option>
-<option value="Sim, vou à festa">Sim, vou à festa!</option>
-<option value="Não poderei comparecer">Não poderei comparecer</option>
-</select>
-<label for="acompanhantes">Quantos acompanhantes irão com você? (sem contar você)</label>
-<input id="acompanhantes" name="acompanhantes" type="number" min="0" max="20" value="0" required>
-<button type="submit">Confirmar pelo WhatsApp</button>
-</form>
-</section>
-<footer class="rodape">Esperamos você para comemorar esse dia especial! 🎂❤️</footer>
-</main>
-<script>
-document.getElementById('confirmacao').addEventListener('submit',function(e){
-e.preventDefault();
-const nome=document.getElementById('nome').value.trim();
-const presenca=document.getElementById('presenca').value;
-const acompanhantes=document.getElementById('acompanhantes').value;
-const telefone='558287340994';
-const mensagem='Olá! Confirmação do aniversário de Gael e Jennefer.%0A%0ANome: '+encodeURIComponent(nome)+'%0APresença: '+encodeURIComponent(presenca)+'%0AAcompanhantes: '+encodeURIComponent(acompanhantes)+'%0AData: 31/01/2027%0AHorário: 16h%0ALocal: Espaço Vale do Sol';
-window.location.href='https://wa.me/'+telefone+'?text='+mensagem;
-});
-</script>
+
+  <!-- CAPA QUE APARECE PRIMEIRO -->
+  <section id="capa-inicial">
+    <h1>Gael &amp; Jennefer</h1>
+    <p>Você é nosso convidado especial!</p>
+    <p>🎉 31 de janeiro de 2027 🎉</p>
+
+    <button id="botao-abrir" type="button">
+      🎀 Abrir convite 🎀
+    </button>
+  </section>
+
+  <!-- CONVITE COMPLETO: APARECE APÓS O CLIQUE -->
+  <main id="conteudo-convite" class="oculto">
+    <div class="convite">
+
+      <header class="topo">
+        <div class="enfeite">🎀 🐭 ❤️ 🐭 🎀</div>
+        <h2>Gael &amp; Jennefer</h2>
+        <p class="subtitulo">
+          Você é nosso convidado especial!
+          <br>
+          Venha comemorar esse dia com a gente!
+        </p>
+      </header>
+
+      <hr class="separador">
+
+      <section class="detalhes">
+        <h3>🎉 Informações da festa</h3>
+
+        <div class="data">
+          📅 <strong>Data:</strong> 31 de janeiro de 2027
+        </div>
+
+        <div class="data">
+          🕓 <strong>Horário:</strong> 16h
+        </div>
+
+        <div class="data">
+          📍 <strong>Local:</strong> Espaço Vale do Sol
+        </div>
+      </section>
+
+      <hr class="separador">
+
+      <section>
+        <h3>🎁 Sugestões de presentes</h3>
+
+        <div class="presentes">
+          <strong>🎀 Jennefer</strong>
+          <br>
+          👗 Roupas: tamanho 10
+          <br>
+          👟 Calçados: 33/34
+          <br>
+          💝 Mimos e acessórios: bolsas, perfumes e outros itens especiais.
+
+          <hr class="separador">
+
+          <strong>🐭 Gael</strong>
+          <br>
+          👕 Roupas: tamanho 3
+          <br>
+          👟 Calçados: 22/23
+          <br>
+          🧸 Brinquedos
+        </div>
+      </section>
+
+      <hr class="separador">
+
+      <section class="confirmacao">
+        <h3>💌 Confirme sua presença</h3>
+
+        <p>
+          Preencha os dados abaixo e envie sua confirmação
+          pelo WhatsApp.
+        </p>
+
+        <form id="form-confirmacao">
+
+          <label for="nome">Seu nome completo:</label>
+          <input
+            type="text"
+            id="nome"
+            name="nome"
+            placeholder="Digite seu nome completo"
+            required
+          >
+
+          <label for="presenca">Você vai comparecer?</label>
+          <select id="presenca" name="presenca" required>
+            <option value="">Selecione uma opção</option>
+            <option value="Sim, vou comparecer">Sim, vou comparecer!</option>
+            <option value="Não poderei comparecer">Não poderei comparecer</option>
+          </select>
+
+          <label for="acompanhantes">
+            Quantos acompanhantes irão com você?
+          </label>
+          <select id="acompanhantes" name="acompanhantes">
+            <option value="0">Nenhum</option>
+            <option value="1">1 acompanhante</option>
+            <option value="2">2 acompanhantes</option>
+            <option value="3">3 acompanhantes</option>
+            <option value="4">4 acompanhantes</option>
+            <option value="5 ou mais">5 ou mais acompanhantes</option>
+          </select>
+
+          <label for="presente">
+            Sugestão de presente (opcional):
+          </label>
+          <input
+            type="text"
+            id="presente"
+            name="presente"
+            placeholder="Ex.: roupa, brinquedo, perfume..."
+          >
+
+          <button type="submit" class="botao-whatsapp">
+            📲 Enviar pelo WhatsApp
+          </button>
+
+        </form>
+      </section>
+
+      <footer class="rodape">
+        <p>
+          ❤️ Estamos preparando tudo com muito carinho
+          para esse dia especial!
+        </p>
+        <p>Esperamos você! 🎉</p>
+      </footer>
+
+    </div>
+  </main>
+
+  <script>
+    // ABRIR O CONVITE
+    document
+      .getElementById('botao-abrir')
+      .addEventListener('click', function () {
+        document.getElementById('capa-inicial').style.display = 'none';
+        document.getElementById('conteudo-convite').classList.remove('oculto');
+        window.scrollTo(0, 0);
+      });
+
+    // ENVIAR A CONFIRMAÇÃO PELO WHATSAPP
+    document
+      .getElementById('form-confirmacao')
+      .addEventListener('submit', function (evento) {
+        evento.preventDefault();
+
+        const nome = document.getElementById('nome').value.trim();
+        const presenca = document.getElementById('presenca').value;
+        const acompanhantes = document.getElementById('acompanhantes').value;
+        const presente = document.getElementById('presente').value.trim();
+
+        if (!nome || !presenca) {
+          alert('Preencha seu nome e informe se poderá comparecer.');
+          return;
+        }
+
+        const mensagem =
+          'Olá! Aqui está minha resposta ao convite de Gael e Jennefer.%0A%0A' +
+          'Nome: ' + encodeURIComponent(nome) + '%0A' +
+          'Presença: ' + encodeURIComponent(presenca) + '%0A' +
+          'Acompanhantes: ' + encodeURIComponent(acompanhantes) + '%0A' +
+          'Sugestão de presente: ' +
+          encodeURIComponent(presente || 'Não informada');
+
+        const telefone = '558287340994';
+
+        const url =
+          'https://wa.me/' + telefone + '?text=' + mensagem;
+
+        window.open(url, '_blank');
+      });
+  </script>
+
 </body>
-</html>
+            </html>
+            
